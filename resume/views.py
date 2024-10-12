@@ -50,7 +50,7 @@ def projects(request):
         {
             'title':'Portfolio',
             'path':'images/portfolio.png',
-            'link':'https://github.com/prakash-cse/Object_tracking_based_on_color'
+            'link':'https://github.com/prakash-cse/portfolio'
         },
         
     ]
