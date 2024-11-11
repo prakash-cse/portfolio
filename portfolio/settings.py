@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-h-t9_(#au=&fydt+z4&@(n@4!f=_a_80=(h%7m4+rk+h&&b5(4
 DEBUG = True
 
 ALLOWED_HOSTS = ['portfolio-production-7b0a.up.railway.app','https://portfolio-production-7b0a.up.railway.app']
-CSRF_TRUSTED_ORIGINS = ['portfolio-production-7b0a.up.railway.app','https://portfolio-production-7b0a.up.railway.app']
+CSRF_TRUSTED_ORIGINS = ['https://portfolio-production-7b0a.up.railway.app']
 
 
 # Application definition
@@ -83,7 +83,7 @@ DATABASES = {
         'USER': 'postgres',
         'PASSWORD': (os.environ['DB_PASSWORD_YO']),
         'HOST': 'viaduct.proxy.rlwy.net',
-        'PORT': '23278',
+        'PORT': '8000',
     }
 }
 
