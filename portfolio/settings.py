@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-h-t9_(#au=&fydt+z4&@(n@4!f=_a_80=(h%7m4+rk+h&&b5(4
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['portfolio-production-7b0a.up.railway.app','https://portfolio-production-7b0a.up.railway.app']
+ALLOWED_HOSTS = ["*"]
 CSRF_TRUSTED_ORIGINS = ['https://portfolio-production-7b0a.up.railway.app']
 
 
