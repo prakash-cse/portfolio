@@ -1,32 +1,67 @@
 {% extends "base.html" %}
 {% load static %}
-{% block content1 %}
-<div class="row">
-    <div class="jumbtron jumbtron-fluid mt-2">
-        <p class="display4 text-light">Python by Pantech solutions</p>
+{% block content %}
+<section class="certificates py-5">
+    <div class="container">
+        <h2 class="section-title mb-5">Certifications</h2>
+        <div class="row g-4">
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100">
+                    <img src="{% static 'images/microsoft.png' %}" class="card-img-top" alt="Microsoft Certificate">
+                    <div class="card-body">
+                        <h5 class="card-title">Career Essentials in Software Development</h5>
+                        <p class="card-text">Microsoft and LinkedIn</p>
+                        <a href="https://www.linkedin.com/learning/certificates/ea3405a957e8cc9355eadb23c2b012d42280c6cece6f63b505c7a5a076cf8fae?trk=share_certificate" class="btn btn-custom" target="_blank">View Certificate</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100">
+                    <img src="{% static 'images/pantech_solution_certificate.png' %}" class="card-img-top" alt="Python Certificate">
+                    <div class="card-body">
+                        <h5 class="card-title">Programming Using Python</h5>
+                        <p class="card-text">Pantech Solutions</p>
+                        <a href="https://learn.pantechsolutions.net/courses/1548877/certificate" class="btn btn-custom" target="_blank">View Certificate</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100">
+                    <img src="{% static 'images/tcs_young_profession.png' %}" class="card-img-top" alt="TCS Certificate">
+                    <div class="card-body">
+                        <h5 class="card-title">TCS ION Career Edge - Young Professional</h5>
+                        <p class="card-text">TCS ION</p>
+                        <a href="https://www.tcsion.com/iDH/India/Dashboard/course_detail/9479690/2" class="btn btn-custom" target="_blank">View Certificate</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100">
+                    <img src="{% static 'images/infosys_ai.png' %}" class="card-img-top" alt="AI Certificate">
+                    <div class="card-body">
+                        <h5 class="card-title">Introduction to Artificial Intelligence</h5>
+                        <p class="card-text">Infosys Springboard</p>
+                        <a href="https://infyspringboard.onwingspan.com/web/en/app/toc/lex_8840337130015322000_shared/overview" class="btn btn-custom" target="_blank">View Certificate</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100">
+                    <img src="{% static 'images/git_certificate.png' %}" class="card-img-top" alt="Git Certificate">
+                    <div class="card-body">
+                        <h5 class="card-title">Git and GitHub | IBM Developer</h5>
+                        <p class="card-text">IBM</p>
+                        <a href="https://skills.yourlearning.ibm.com/certificate/share/0719baa6b9ewogICJvYmplY3RJZCIgOiAiVVJMLTIxQUJCNUMwQUQ3MiIsCiAgIm9iamVjdFR5cGUiIDogIkFDVElWSVRZIiwKICAibGVhcm5lckNOVU0iIDogIjMwMzI1MzRSRUciCn024830413c2-10" class="btn btn-custom" target="_blank">View Certificate</a>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
     </div>
-
-    <div class="jumbtron jumbtron-fluid mt-2 ">
-        <p class="display4"> Programming Foundations Fundamentals by linkedIn learning </p>
-    </div>
-
-    <div class="jumbtron jumbtron-fluid mt-2">
-        <p class="display4 text-light"> Career Skills in Software Development by linkedIn learning </p>
-    </div>
-
-    <div class="jumbtron jumbtron-fluid mt-2">
-        <p class="display4 text-light"> Artificial Intelligence by Infosys springboard </p>
-    </div>
-
-    <div class="jumbtron jumbtron-fluid mt-2">
-        <p class="display4 text-light"> carrier guidance by IBM SkillBuild </p>
-    </div>
-
-    <div class="jumbtron jumbtron-fluid mt-2">
-        <p class="display4 text-light"> Software Development by Microsoft and LinkedIn </p>
-    </div>
-
-</div>
-
-
-{% endblock content1 %}
+</section>
+{% endblock %}

@@ -49,7 +49,7 @@ def projects(request):
 
         {
             'title':'Portfolio',
-            'path':'images/portfolio.png',
+            'path':'images/portfolio1.png',
             'link':'https://github.com/prakash-cse/portfolio'
         },
         
@@ -65,12 +65,15 @@ def contact(request):
     return render(request,"contact.html")
 
 def resume(request):
-    resume_path="myapp/resume.pdf"
-    resume_path=staticfiles_storage.path(resume_path)
+    resume_path = "myapp/resume.pdf"
+    resume_path = staticfiles_storage.path(resume_path)
     if staticfiles_storage.exists(resume_path):
-        with open(resume_path,"rb") as resume_file:
-            response=HttpResponse(resume_file.read(),content_type="application/pdf")
-            response['Content-Disposition']='attachment';filename="resume.pdf"
+        with open(resume_path, "rb") as resume_file:
+            response = HttpResponse(resume_file.read(), content_type="application/pdf")
+            if request.GET.get('download'):
+                response['Content-Disposition'] = 'attachment; filename="resume.pdf"'
+            else:
+                response['Content-Disposition'] = 'inline; filename="resume.pdf"'
             return response
     else:
-        return HttpResponse("resume not found", status=404)
+        return HttpResponse("Resume not found", status=404)

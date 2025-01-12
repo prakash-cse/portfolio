@@ -1,46 +1,37 @@
 {% extends "base.html" %}
 {% load static %}
-{% block content1 %}
-<div class="row my-5">
-  <div class="col-4 d-flex justify-content-center align-items-center">
-    <img style="width:200px; height:auto; display:block;" src="{% static 'images/photo.png' %}" alt="Image">
-  </div>
-
-  <div class="col-7 text-left text-light">
-    <h2> Hello !</h2>
-    <p class="fs-5">
-      I am a dedicated Web Developer with expertise in Python and Django, actively seeking full-time opportunities. I gained valuable experience during my Python programming internship at Pantech Solutions, where I developed a fully functional e-commerce website and a home grooming service website using the Django framework, demonstrating my skills in backend development and user-focused design. 
-    </p>
-    <p class="fs-5">
-      In addition, I have worked on AI projects such as face recognition and object tracking, further enhancing my technical expertise. I'm passionate about applying my skills to create innovative solutions and contribute to impactful projects.
-    </p>
-  </div>
-
-
-</div>
-
-<div class="row my-2">
-  <h2 class="text-center" style="color:#4fffb0"> My Tech Stack</h2>
-
-  <div class="d-flex justify-content-around align-items-center">
-  <img src="{% static 'images/html.png' %}" width="60" height="60" alt="HTML Logo" class="img-fluid">
-
-  <img src="{% static 'images/css.png' %}" width="60" height="60" alt="HTML Logo" class="img-fluid">
-
-  <img src="{% static 'images/js.png' %}" width="60" height="60" alt="HTML Logo" class="img-fluid">
-
-  <img src="{% static 'images/bootstrap.png' %}" width="75" height="75" alt="HTML Logo" class="img-fluid">
-
-  <img src="{% static 'images/python.png' %}" width="56" height="56" alt="HTML Logo" class="img-fluid">
-
-  <img src="{% static 'images/mysql.png' %}" width="85" height="85" alt="HTML Logo" class="img-fluid">
-
-  <img src="{% static 'images/django.png' %}" width="90" height="90" alt="HTML Logo" class="img-fluid">
-
-  <img src="{% static 'images/github1.jpeg' %}" width="70" height="70" alt="HTML Logo" class="img-fluid">
-
-  </div>
-</div>
-
-
-{% endblock content1 %}
+{% block content %}
+<section class="about py-5">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <h2 class="section-title">About Me</h2>
+                <p class="lead mb-4">Passionate Web Developer with a focus on Python and Django</p>
+                <p class="mb-4">I am a dedicated Web Developer with a focus on Python and Django, actively seeking full-time opportunities.I worked on several key projects, including developing a fully functional e-commerce website using the Django framework, which showcased my ability to create robust and scalable web applications.</p> 
+                <p class="mb-4">I created a website for providing grooming services at home, also using the Django framework, demonstrating my proficiency in backend development and user-centric design. I have also worked on artificial intelligence projects such as face recognition and object tracking.</p>
+                <div class="tech-stack">
+                    <h3 class="h5 mb-3">Tech Stack</h3>
+                    <div class="d-flex flex-wrap gap-3">
+                        <img src="{% static 'images/python.png' %}" alt="Python" height="40">
+                        <img src="{% static 'images/html.png' %}" alt="HTML" height="50">
+                        <img src="{% static 'images/css.png' %}" alt="CSS" height="50">
+                        <img src="{% static 'images/js.png' %}" alt="JavaScript" height="50">
+                        <img src="{% static 'images/github.jpeg' %}" alt="github" height="50">
+                        <img src="{% static 'images/bootstrap.png' %}" alt="bootstrap" height="50">
+                        <img src="{% static 'images/django.png' %}" alt="Django" height="40">
+                        <img src="{% static 'images/mysql.png' %}" alt="mysql" height="40">
+                        <img src="{% static 'images/postman-logo.png' %}" alt="postman" height="50">
+                        <img src="{% static 'images/vs_code.png' %}" alt="vs_code" height="55">
+                        <img src="{% static 'images/canvaa.jpg' %}" alt="canva" height="50">
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 d-flex justify-content-center animate-fade-in" style="margin-top: 20px;">
+              <div class="profile-container" style="width: 300px;">
+                  <img src="{% static 'images/photo.png' %}" alt="About Me" class="img-fluid">
+              </div>
+          </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

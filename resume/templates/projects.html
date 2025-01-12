@@ -1,14 +1,70 @@
 {% extends "base.html" %}
 {% load static %}
-{% block content1 %}
-<div class="row my-2">
-    {% for project in project_show %}
-<div class="col-6">
-    <div style="padding-bottom:60px">
-    <h4 class="text-light">{{project.title}}</h4>
-    <a href="{{project.link}}"><img src="{% static project.path %}" width="500" height="800" class="img-fluid"></a>
+{% block content %}
+<section class="projects py-5">
+    <div class="container">
+        <h2 class="section-title mb-5">My Projects</h2>
+        <div class="row g-4">
+            {% for project in project_show %}
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100">
+                    <img src="{% static project.path %}" class="card-img-top" alt="{{ project.title }}">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ project.title }}</h5>
+                        <p class="card-text">
+                            {% if project.title == 'Personalized Grooming Website' %}
+                            Built with Django, Bootstrap, and MySQL. Features include user authentication, appointment booking, and service management.
+                            <br><small class="text-muted">Skills: HTML, CSS, JavaScript, Django, SQL, Python</small>
+                            {% elif project.title == 'E-commerce Website' %}
+                            Full-stack e-commerce platform with product management, shopping cart, and payment integration.
+                            <br><small class="text-muted">Skills: HTML, CSS, JavaScript, Django, SQL, Python</small>
+                            {% elif project.title == 'Car Segmentation Website' %}
+                            A showcase of modern web development with responsive design and car segmentation features.
+                            <br><small class="text-muted">Skills: HTML, CSS, Bootstrap</small>
+                            {% elif project.title == 'Lakshmi Mahal Website' %}
+                            Elegant website design with responsive layouts and interactive features.
+                            <br><small class="text-muted">Skills: HTML, CSS, JavaScript, Bootstrap</small>
+                            {% elif project.title == 'Blog Website' %}
+                            Feature-rich blogging platform with user authentication and content management.
+                            <br><small class="text-muted">Skills: HTML, CSS, JavaScript, Django, SQL, Python</small>
+                            {% elif project.title == 'Todo List' %}
+                            Efficient task management application with database integration.
+                            <br><small class="text-muted">Skills: HTML, CSS, Django, SQL, Python</small>
+                            {% elif project.title == 'Portfolio' %}
+                            Professional portfolio website showcasing projects and skills.
+                            <br><small class="text-muted">Skills: HTML, CSS, Bootstrap, Django, Python, SQL</small>
+                            {% else %}
+                            A showcase of modern web development with responsive design and seamless user experience.
+                            <br><small class="text-muted">Skills: HTML5, CSS3, JavaScript, Django</small>
+                            {% endif %}
+                        </p>
+                        <a href="{{ project.link }}" class="btn btn-custom" target="_blank">View Project</a>
+                    </div>
+                    <div class="card-footer text-muted">
+                        <small>
+                            {% if project.title == 'Personalized Grooming Website' %}
+                            Completed: April 2024
+                            {% elif project.title == 'E-commerce Website' %}
+                            Completed: March 2022
+                            {% elif project.title == 'Car Segmentation Website' %}
+                            Completed: June 2023
+                            {% elif project.title == 'Lakshmi Mahal Website' %}
+                            Completed: September 2023
+                            {% elif project.title == 'Blog Website' %}
+                            Completed: August 2024
+                            {% elif project.title == 'Todo List' %}
+                            Completed: May 2022
+                            {% elif project.title == 'Portfolio' %}
+                            Completed: December 2024
+                            {% else %}
+                            Completed: March 2024
+                            {% endif %}
+                        </small>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
     </div>
-</div>
-{% endfor %}
-</div>
-{% endblock content1 %}
+</section>
+{% endblock %}
