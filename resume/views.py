@@ -65,15 +65,42 @@ def contact(request):
     return render(request,"contact.html")
 
 def resume(request):
-    resume_path = "myapp/resume.pdf"
-    resume_path = staticfiles_storage.path(resume_path)
-    if staticfiles_storage.exists(resume_path):
-        with open(resume_path, "rb") as resume_file:
-            response = HttpResponse(resume_file.read(), content_type="application/pdf")
-            if request.GET.get('download'):
-                response['Content-Disposition'] = 'attachment; filename="resume.pdf"'
-            else:
-                response['Content-Disposition'] = 'inline; filename="resume.pdf"'
-            return response
-    else:
+    """
+    Handles resume viewing and downloading with consistent behavior across devices.
+    Uses Content-Type and Content-Disposition headers to control browser behavior.
+    """
+    resume_path = "myapp/prakash_resume.pdf"
+    
+    # Check if file exists in static storage
+    if not staticfiles_storage.exists(resume_path):
         return HttpResponse("Resume not found", status=404)
+        
+    try:
+        # Get the full path to the file
+        file_path = staticfiles_storage.path(resume_path)
+        
+        # Open and read the file
+        with open(file_path, 'rb') as pdf_file:
+            pdf_content = pdf_file.read()
+        
+        # Create response object
+        response = HttpResponse(pdf_content, content_type='application/pdf')
+        
+        # Check if this is a download request
+        if request.GET.get('download'):
+            # Force download
+            response['Content-Disposition'] = 'attachment; filename="prakash_resume.pdf"'
+        else:
+            # Force display in browser
+            response['Content-Disposition'] = 'inline; filename="prakash_resume.pdf"'
+            
+        # Add headers to prevent caching
+        response['Cache-Control'] = 'no-cache, no-store, must-revalidate'
+        response['Pragma'] = 'no-cache'
+        response['Expires'] = '0'
+        
+        return response
+        
+    except Exception as e:
+        return HttpResponse(f"Error accessing resume: {str(e)}", status=500)
+
