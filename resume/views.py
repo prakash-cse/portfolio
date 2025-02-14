@@ -65,10 +65,6 @@ def contact(request):
     return render(request,"contact.html")
 
 def resume(request):
-    """
-    Handles resume viewing and downloading with consistent behavior across devices.
-    Uses Content-Type and Content-Disposition headers to control browser behavior.
-    """
     resume_path = "myapp/prakash_resume.pdf"
     
     # Check if file exists in static storage
